@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="SeleniumXeroTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-05-26T01:01:28" hostname="NZWGTNLP59" time="31.025">
+  <properties/>
+  <testcase name="testCreateANZAccount" classname="SeleniumXeroTest" time="31.025"/>
+  <system-out><![CDATA[Passed
+Passed2
+]]></system-out>
+  <system-err><![CDATA[Starting ChromeDriver 90.0.4430.24 (4c6d850f087da467d926e8eddb76550aed655991-refs/branch-heads/4430@{#429}) on port 40456
+Only local connections are allowed.
+Please see https://chromedriver.chromium.org/security-considerations for suggestions on keeping ChromeDriver safe.
+ChromeDriver was started successfully.
+May 26, 2021 1:01:35 PM org.openqa.selenium.remote.ProtocolHandshake createSession
+INFO: Detected dialect: W3C
+]]></system-err>
+</testsuite>
