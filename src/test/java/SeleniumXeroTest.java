@@ -17,14 +17,17 @@ public class SeleniumXeroTest {
 
     protected static WebDriver driver;
 
-    @Before
-    public void loginToXero() throws Exception {
+    @BeforeClass
+    public static void setup() {
         //FirefoxDriver driver=new FirefoxDriver();
         //ChromeDriver driver = new ChromeDriver();
-
         System.setProperty("webdriver.chrome.driver", "../ChromeDriver/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+    }
+
+    @Before
+    public void loginToXero() throws Exception {
         driver.get("https://login.xero.com/identity/user/login");
         driver.findElement(By.xpath("//input[@data-automationid='Username--input']")).sendKeys("agmanzo@gmail.com");
         String pw = new String(Base64.getDecoder().decode("Q29uYW4yMDE5".getBytes()));
@@ -94,13 +97,13 @@ public class SeleniumXeroTest {
         driver.close();
     }
 
-
     void verifyANZAccount(String accountName) {
         //driver.findElement(By.xpath("//button[@data-automationid='connectbank-buttonDownloadForm']"));
-        if(driver.findElement(By.xpath("//img[@alt='ANZ (NZ)']")).isDisplayed()) System.out.println("Passed");//end test as pass;
-        else System.out.println("Failed");
+        Boolean actualANZLogoDisplayCheck = driver.findElement(By.xpath("//img[@alt='ANZ (NZ)']")).isDisplayed();
+        Assert.assertTrue("ANZ logo displayed after creation of account", actualANZLogoDisplayCheck);
 
-        if(driver.getPageSource().contains(accountName)) System.out.println("Passed2");//end test as pass;
-        else System.out.println("Failed2");
+        //check if account was created with the accountname defined
+        Boolean actualAcctNameCheck = driver.getPageSource().contains(accountName);
+        Assert.assertTrue("Account created with the accountName="+accountName, actualAcctNameCheck);
     }
 }
