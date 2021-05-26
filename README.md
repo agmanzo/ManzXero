@@ -12,9 +12,10 @@ The following are needed to run:
 3. Chromedriver, located on folder ChromeDriver (on the same level as ManzXero repo)
 
 To run the test:
-1. Open the project in Intellij IDEA (can also be used in eclipse, but Idea is much preferred)
-2. Build the gradle to get the external libraries (jar files) for the selenium
-3. Run the test file using gradle/junit:
+1. Clone the project at https://github.com/agmanzo/ManzXero.git
+2. Open the project in Intellij IDEA (can also be used in eclipse, but Idea is much preferred)
+3. Build the gradle to get the external libraries (jar files) for the selenium
+4. Run the test file using gradle/junit:
 \ManzXero\src\test\java\SeleniumXeroTest.java
 
 
